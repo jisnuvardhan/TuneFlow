@@ -32,7 +32,7 @@ listening experience.
 
 ### Home
 
-![TuneFlow Home](screenshots/Home.png)
+![TuneFlow Home](screenshots/home.png)
 
 ### Your Library
 
