@@ -1,0 +1,291 @@
+/* =========================================================
+   TUNEFLOW — POLISHED AURORA BARS
+   Reference-inspired proportions and motion
+   ========================================================= */
+
+.tf-aurora-bars {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+
+  background: #000;
+}
+
+.tf-aurora-bars-inner {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 68%;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.tf-aurora-bar-slot {
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+
+  flex: 1 1 0;
+}
+
+.tf-aurora-bar {
+  width: 100%;
+  min-height: 1px;
+
+  border-radius: 9999px 9999px 0 0;
+
+  opacity: 0.84;
+
+  will-change: height;
+
+  /*
+   * Keep the light soft, like the reference.
+   * No aggressive neon halo around each individual bar.
+   */
+  box-shadow:
+    0 -1px 7px rgba(255, 112, 178, 0.07);
+}
+
+
+/* A single broad bloom behind the whole group. */
+.tf-aurora-bars::before {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+
+  left: 2%;
+  right: 2%;
+  bottom: -20%;
+
+  height: 60%;
+
+  background:
+    radial-gradient(
+      ellipse 68% 55% at 50% 100%,
+      rgba(255, 105, 178, 0.19) 0%,
+      rgba(255, 50, 135, 0.08) 42%,
+      transparent 73%
+    );
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/*
+ * Text protection.
+ *
+ * This is intentionally a soft radial dark zone, not a visible card.
+ * The Aurora remains visible around the title and underneath it.
+ */
+.tf-aurora-content-shield {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 42% 48% at 50% 42%,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.60) 34%,
+      rgba(0, 0, 0, 0.22) 58%,
+      rgba(0, 0, 0, 0) 78%
+    );
+}
+
+
+/*
+ * Gentle top and edge fade.
+ */
+.tf-aurora-vignette {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.34) 25%,
+      rgba(0, 0, 0, 0.06) 55%,
+      rgba(0, 0, 0, 0.16) 100%
+    ),
+    radial-gradient(
+      ellipse 92% 90% at 50% 45%,
+      transparent 45%,
+      rgba(0, 0, 0, 0.16) 78%,
+      rgba(0, 0, 0, 0.52) 100%
+    );
+}
+
+
+/* =========================================================
+   INTRO CONTENT — PREMIUM READABILITY
+   ========================================================= */
+
+.tf-intro {
+  isolation: isolate;
+}
+
+.tf-intro-content {
+  position: relative;
+  z-index: 10;
+
+  /*
+   * Lift the copy just enough to sit in the dark portion
+   * above the Aurora's strongest area.
+   */
+  transform: translateY(-5vh);
+}
+
+.tf-intro-content::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: -70px;
+  left: 50%;
+
+  width: min(650px, 78vw);
+  height: 460px;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 58% 56% at 50% 43%,
+      rgba(0, 0, 0, 0.90) 0%,
+      rgba(0, 0, 0, 0.70) 34%,
+      rgba(0, 0, 0, 0.34) 58%,
+      rgba(0, 0, 0, 0.06) 77%,
+      transparent 100%
+    );
+
+  filter: blur(8px);
+}
+
+.tf-intro-label {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.98);
+}
+
+.tf-intro h1 {
+  position: relative;
+
+  color: #fff;
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 1),
+    0 8px 32px rgba(0, 0, 0, 0.92),
+    0 0 50px rgba(0, 0, 0, 0.60);
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.tf-intro p {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 1),
+    0 7px 24px rgba(0, 0, 0, 0.96);
+}
+
+.tf-intro-logo {
+  position: relative;
+  z-index: 2;
+
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.56),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.tf-intro-enter {
+  position: relative;
+  z-index: 3;
+
+  box-shadow:
+    0 12px 36px rgba(0, 0, 0, 0.58);
+}
+
+.tf-intro-bottom {
+  position: relative;
+  z-index: 10;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 1);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .tf-aurora-bars-inner {
+    height: 60%;
+    padding: 0 4px;
+  }
+
+  .tf-aurora-bar {
+    opacity: 0.76;
+  }
+
+  .tf-intro-content {
+    transform: translateY(-4vh);
+  }
+
+  .tf-intro-content::before {
+    top: -45px;
+
+    width: 94vw;
+    height: 420px;
+  }
+
+  .tf-intro h1 {
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 1),
+      0 8px 26px rgba(0, 0, 0, 0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-aurora-bar {
+    will-change: auto;
+  }
+}
