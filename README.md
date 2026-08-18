@@ -32,19 +32,19 @@ listening experience.
 
 ### Home
 
-![TuneFlow Home](screenshots/home.png)
+![TuneFlow Home](screenshots/Home.png)
 
 ### Your Library
 
-![TuneFlow Library](screenshots/library.png)
+![TuneFlow Library](screenshots/Library.png)
 
 ### Music Player
 
-![TuneFlow Player](screenshots/player.png)
+![TuneFlow Player](screenshots/Player.png)
 
 ### Upload & Metadata
 
-![TuneFlow Upload](screenshots/upload.png)
+![TuneFlow Upload](screenshots/Upload.png)
 
 ### Playlist
 
